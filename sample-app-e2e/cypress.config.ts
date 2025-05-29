@@ -14,5 +14,9 @@ export default defineConfig({
       ciBaseUrl: 'http://localhost:4300',
     }),
     baseUrl: 'http://localhost:4200',
+    setupNodeEvents(on, config) {
+      // Optional: customize Vite configuration here
+      return config;
+    },
   },
 });

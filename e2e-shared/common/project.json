@@ -1,0 +1,19 @@
+{
+  "name": "common",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "e2e-shared/common/src",
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "@nx/js:tsc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/e2e-shared/common",
+        "main": "e2e-shared/common/src/index.ts",
+        "tsConfig": "e2e-shared/common/tsconfig.lib.json",
+        "assets": ["e2e-shared/common/*.md"]
+      }
+    }
+  },
+  "tags": []
+}
