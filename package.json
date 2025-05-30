@@ -2,7 +2,9 @@
   "name": "@sapiens-digital-portal/source",
   "version": "0.0.0",
   "license": "MIT",
-  "scripts": {},
+  "scripts": {
+    "e2e:browserstack": "browserstack-cypress run --config-file browserstack.json"
+  },
   "private": true,
   "devDependencies": {
     "@nx/cypress": "21.1.2",
@@ -19,6 +21,7 @@
     "@types/react-dom": "19.0.0",
     "@vitejs/plugin-react": "^4.2.0",
     "@vitest/ui": "^3.0.0",
+    "browserstack-cypress-cli": "^1.32.8",
     "cypress": "^14.2.1",
     "jiti": "2.4.2",
     "jsdom": "~22.1.0",

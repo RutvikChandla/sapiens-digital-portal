@@ -15,7 +15,14 @@ export default defineConfig({
     }),
     baseUrl: 'http://localhost:4200',
     setupNodeEvents(on, config) {
-      // Optional: customize Vite configuration here
+      // Handle BrowserStack specific configuration
+      const browserstack = process.env.BROWSERSTACK === 'true';
+
+      if (browserstack) {
+        // These values would be set by the BrowserStack runner
+        config.baseUrl = 'http://localhost:4200';
+      }
+
       return config;
     },
   },
