@@ -6,15 +6,17 @@
   "browsers": [
     {
       "browser": "chrome",
-      "os": "Windows 10",
+      "os": "OS X Monterey",
       "versions": ["latest"]
     }
   ],
   "run_settings": {
+    "nodeVersion": "16.20.0",
     "cypress_config_file": "sample-app-e2e/cypress.config.ts",
     "build_name": "sample-app-e2e-${BUILD_NUMBER}",
     "exclude": [],
     "parallels": 1,
+    "networkLogs": true,
     "npm_dependencies": {
       "@nx/cypress": "21.1.2",
       "@nx/js": "^21.1.2",
@@ -32,7 +34,8 @@
     },
     "package_config_options": {},
     "headless": true,
-    "specs": "sample-app-e2e/src/e2e/**/*.cy.ts"
+    "specs": "./src/e2e/app.cy.ts",
+    "home_directory": "./"
   },
   "connection_settings": {
     "local": true,
