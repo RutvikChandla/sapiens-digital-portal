@@ -10,7 +10,8 @@
   "include": [
     "**/*.ts",
     "**/*.js",
-    "cypress.config.ts",
+    "cypress.base.config.ts",
+    "**/cypress.config.ts",
     "**/*.cy.ts",
     "**/*.cy.tsx",
     "**/*.cy.js",

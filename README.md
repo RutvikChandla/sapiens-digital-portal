@@ -1,10 +1,56 @@
-# SapiensDigitalPortal
+# Sapiens Digital Portal
 
 <a alt="Nx logo" href="https://nx.dev" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/nrwl/nx/master/images/nx-logo.png" width="45"></a>
 
-✨ Your new, shiny [Nx workspace](https://nx.dev) is ready ✨.
+A modern React application built with [Nx workspace](https://nx.dev) featuring end-to-end testing with Cypress and BrowserStack integration.
 
-[Learn more about this workspace setup and its capabilities](https://nx.dev/getting-started/intro#learn-nx?utm_source=nx_project&amp;utm_medium=readme&amp;utm_campaign=nx_projects) or run `npx nx graph` to visually explore what was created. Now, let's get you up to speed!
+## Project Structure
+
+This workspace contains:
+
+- **`sample-app/`** - React application with Vite bundler
+- **`e2e/`** - End-to-end testing configuration and shared Cypress setup
+- **`e2e-shared/common/`** - Shared utilities and types for E2E tests
+- **`sample-app-e2e/`** - Legacy E2E test structure (being migrated)
+
+## Applications & Libraries
+
+- **sample-app** - Main React application
+- **common** - Shared E2E testing utilities and locale configuration
+
+## Getting Started
+
+### Development Server
+
+To start the React application in development mode:
+
+```sh
+npx nx dev sample-app
+```
+
+The application will be available at `http://localhost:4200`.
+
+### Build
+
+To build the application for production:
+
+```sh
+npx nx build sample-app
+```
+
+### Testing
+
+Run end-to-end tests locally:
+
+```sh
+npx nx e2e e2e
+```
+
+Run E2E tests on BrowserStack:
+
+```sh
+npm run e2e:browserstack
+```
 
 ## Run tasks
 
@@ -17,7 +63,8 @@ npx nx <target> <project-name>
 For example:
 
 ```sh
-npx nx build myproject
+npx nx build sample-app
+npx nx typecheck sample-app
 ```
 
 These targets are either [inferred automatically](https://nx.dev/concepts/inferred-tasks?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects) or defined in the `project.json` or `package.json` files.
@@ -26,28 +73,52 @@ These targets are either [inferred automatically](https://nx.dev/concepts/inferr
 
 ## Add new projects
 
-While you could add new projects to your workspace manually, you might want to leverage [Nx plugins](https://nx.dev/concepts/nx-plugins?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects) and their [code generation](https://nx.dev/features/generate-code?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects) feature.
+## Add new projects
 
-To install a new plugin you can use the `nx add` command. Here's an example of adding the React plugin:
+This workspace uses [Nx plugins](https://nx.dev/concepts/nx-plugins?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects) for [code generation](https://nx.dev/features/generate-code?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects).
+
+Current plugins installed:
+
+- `@nx/react` - React applications and libraries
+- `@nx/vite` - Vite build tool integration
+- `@nx/cypress` - Cypress E2E testing
+
+To add a new React component:
+
 ```sh
-npx nx add @nx/react
+npx nx g @nx/react:component my-component --project=sample-app
 ```
 
-Use the plugin's generator to create new projects. For example, to create a new React app or library:
+To add a new library:
 
 ```sh
-# Generate an app
-npx nx g @nx/react:app demo
-
-# Generate a library
-npx nx g @nx/react:lib some-lib
+npx nx g @nx/react:lib my-lib
 ```
 
 You can use `npx nx list` to get a list of installed plugins. Then, run `npx nx list <plugin-name>` to learn about more specific capabilities of a particular plugin. Alternatively, [install Nx Console](https://nx.dev/getting-started/editor-setup?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects) to browse plugins and generators in your IDE.
 
 [Learn more about Nx plugins &raquo;](https://nx.dev/concepts/nx-plugins?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects) | [Browse the plugin registry &raquo;](https://nx.dev/plugin-registry?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
 
-## Set up CI!
+## BrowserStack Integration
+
+This project includes BrowserStack integration for cross-browser testing:
+
+1. Set up your BrowserStack credentials:
+
+   ```sh
+   export BROWSERSTACK_USERNAME="your-username"
+   export BROWSERSTACK_ACCESS_KEY="your-access-key"
+   ```
+
+2. Run E2E tests on BrowserStack:
+
+   ```sh
+   npm run e2e:browserstack
+   ```
+
+The BrowserStack configuration is defined in `browserstack.json` and supports Chrome on macOS Monterey.
+
+## Set up CI
 
 ### Step 1
 
@@ -84,12 +155,13 @@ Nx Console is an editor extension that enriches your developer experience. It le
 
 Learn more:
 
-- [Learn more about this workspace setup](https://nx.dev/getting-started/intro#learn-nx?utm_source=nx_project&amp;utm_medium=readme&amp;utm_campaign=nx_projects)
+- [Learn more about this workspace setup](https://nx.dev/getting-started/intro#learn-nx?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
 - [Learn about Nx on CI](https://nx.dev/ci/intro/ci-with-nx?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
 - [Releasing Packages with Nx release](https://nx.dev/features/manage-releases?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
 - [What are Nx plugins?](https://nx.dev/concepts/nx-plugins?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
 
 And join the Nx community:
+
 - [Discord](https://go.nx.dev/community)
 - [Follow us on X](https://twitter.com/nxdevtools) or [LinkedIn](https://www.linkedin.com/company/nrwl)
 - [Our Youtube channel](https://www.youtube.com/@nxdevtools)

@@ -11,8 +11,9 @@
     }
   ],
   "run_settings": {
+    "accessibility": true,
     "nodeVersion": "16.20.0",
-    "cypress_config_file": "sample-app-e2e/cypress.config.ts",
+    "cypress_config_file": "e2e/sample-app-e2e/cypress.config.ts",
     "build_name": "sample-app-e2e-${BUILD_NUMBER}",
     "exclude": [],
     "parallels": 1,
@@ -33,8 +34,7 @@
       "typescript": "~5.7.2"
     },
     "package_config_options": {},
-    "headless": true,
-    "specs": "./src/e2e/app.cy.ts",
+    "headless": false,
     "home_directory": "./"
   },
   "connection_settings": {
