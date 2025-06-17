@@ -21,17 +21,6 @@
     "networkLogs": true,
     "npm_dependencies": {
       "@nx/cypress": "21.1.2",
-      "@nx/js": "^21.1.2",
-      "@nx/react": "^21.1.2",
-      "@nx/web": "21.1.2",
-      "@nx/workspace": "21.1.2",
-      "@swc-node/register": "~1.9.1",
-      "@swc/core": "~1.5.7",
-      "@swc/helpers": "~0.5.11",
-      "@types/node": "^20.0.0",
-      "@types/react": "19.0.0",
-      "@types/react-dom": "19.0.0",
-
       "typescript": "~5.7.2",
       "tsc-alias": "^1.8.16"
     },
