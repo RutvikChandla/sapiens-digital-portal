@@ -4,19 +4,31 @@
     "rootDir": ".",
     "sourceMap": true,
     "declaration": false,
-    "moduleResolution": "node",
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "importHelpers": true,
-    "target": "es2015",
-    "module": "esnext",
-    "lib": ["es2020", "dom"],
+    "module": "nodenext",
+    "moduleResolution": "nodenext",
+    "lib": [
+      "es2020",
+      "dom"
+    ],
+    "types": [
+      "cypress",
+      "node",
+      "allure-cypress"
+    ],
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@sapiens-digital/e2e-common": ["e2e-shared/common/src/index.ts"]
+      "@sapiens-digital/e2e-common": [
+        "e2e-shared/common/src/index.ts"
+      ]
     }
   },
-  "exclude": ["node_modules", "tmp"]
+  "exclude": [
+    "node_modules",
+    "tmp"
+  ]
 }

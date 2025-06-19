@@ -11,7 +11,7 @@
     }
   ],
   "run_settings": {
-    "ts_config_file_path": "/Users/ritvik/bscode/sapiens-digital-portal/tsconfig.base.json",
+    "ts_config_file_path": "tsconfig.base.json",
     "accessibility": true,
     "nodeVersion": "16.20.0",
     "cypress_config_file": "e2e/sample-app-e2e/cypress.config.ts",
@@ -22,7 +22,9 @@
     "npm_dependencies": {
       "@nx/cypress": "21.1.2",
       "typescript": "~5.7.2",
-      "tsc-alias": "^1.8.16"
+      "tsc-alias": "^1.8.16",
+      "cypress": "^14.2.1",
+      "allure-cypress": "^3.2.2"
     },
     "package_config_options": {},
     "headless": false,

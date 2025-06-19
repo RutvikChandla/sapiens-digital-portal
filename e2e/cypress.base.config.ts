@@ -1,6 +1,6 @@
 import { nxE2EPreset } from '@nx/cypress/plugins/cypress-preset';
 import { defineConfig } from 'cypress';
-
+import { allureCypress } from "allure-cypress/reporter";
 
 import { getLocaleConfiguration, getGreetingFromCommon } from '@sapiens-digital/e2e-common';
 
@@ -20,6 +20,8 @@ export default defineConfig({
     }),
     baseUrl: 'http://localhost:4200',
     setupNodeEvents(on, config) {
+      // Register the Allure reporter
+      allureCypress(on, config);
       // Handle BrowserStack specific configuration
       const browserstack = process.env.BROWSERSTACK === 'true';
 
