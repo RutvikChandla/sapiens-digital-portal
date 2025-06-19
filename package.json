@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
-    "e2e:browserstack": "browserstack-cypress run --config-file browserstack.json"
+    "e2e:browserstack": "browserstack-cypress run --config-file browserstack.json --cli-debug"
   },
   "private": true,
   "devDependencies": {
