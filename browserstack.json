@@ -25,7 +25,6 @@
     "parallels": 2,
     "networkLogs": true,
     "npm_dependencies": {
-      "@nx/cypress": "21.1.2",
       "typescript": "5.4.5",
       "tsc-alias": "^1.8.16",
       "cypress": "^14.2.1",
